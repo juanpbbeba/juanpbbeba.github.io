@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            background-image: url('love_background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: red; /* Cambio de color a rojo */
+            margin-bottom: 30px;
+        }
+
+        .options button {
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        #yes {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #no {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #message {
+            display: none;
+            color: white;
+            font-size: 24px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Me perdonas?</h1>
+    <div class="options">
+        <button id="yes" onclick="showMessage()">Sí</button>
+        <button id="no" onmousedown="growYesOption()">No</button>
+    </div>
+    <div id="message">
+        <p>¡Me perdonas!</p>
+        <img src="209269.gif" alt="Amor"> <!-- Imagen de amor -->
+    </div>
+
+    <script>
+        function showMessage() {
+            var message = document.getElementById('message');
+            message.style.display = 'block';
+            // Cambiar el contenido de la página después de hacer clic en "Sí"
+            document.body.innerHTML = `
+                <h1>¡Te quiero mucho chola!</h1>
+                <p>yo también te perdono</p>
+                <img src="" alt="Amor">
+            `;
+        }
+
+        function growYesOption() {
+            var yesButton = document.getElementById('yes');
+            yesButton.style.transform = 'scale(1.5)';
+            setTimeout(function() { // Después de 500ms, restaurar el tamaño normal
+                yesButton.style.transform = 'scale(1)';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
